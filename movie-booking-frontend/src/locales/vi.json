@@ -1,0 +1,18 @@
+{
+  "Login": "Đăng nhập",
+  "Register": "Đăng ký",
+  "RegisterFailed": "Đăng ký thất bại",
+  "RegisterSuccessfully": "Đăng ký thành công",
+  "LoginFailed": "Đăng nhập không thành công",
+  "LoginSuccessfully": "Đăng nhập thành công",
+  "UserName": "Tên đăng nhập",
+  "Email":"Email",
+  "Password": "Mật khẩu",
+  "UsernameNotEmpty": "Tên đăng nhập không được bỏ trống!",
+  "PasswordNotEmpty": "Mật khẩu không được bỏ trống!",
+  "EmailNotEmpty": "Email không được bỏ trống",
+  "PasswordMinLength": "Mật khẩu phải dài ít nhất 8 ký tự!",
+  "ForgotPassword": "Quên mật khẩu",
+  "BookTicket": "Đặt vé",
+  "Logout": "Đăng xuất"
+}

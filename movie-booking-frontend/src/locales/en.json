@@ -1,0 +1,12 @@
+{
+  "Register": "Register",
+  "Login": "Login",
+  "RegisterFailed": "Register Failed",
+  "LoginFailed": "Login Failed",
+  "LoginSuccessfully": "Login Successfully",
+  "RegisterSuccessfully": "Register Successfully",
+  "UserName": "UserName",
+  "Email":"Email",
+  "Password": "Password",
+  "PasswordMinLength": "Password must be at least 8 characters long"
+}
