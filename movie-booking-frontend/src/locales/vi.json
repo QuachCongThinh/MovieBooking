@@ -14,5 +14,7 @@
   "PasswordMinLength": "Mật khẩu phải dài ít nhất 8 ký tự!",
   "ForgotPassword": "Quên mật khẩu",
   "BookTicket": "Đặt vé",
-  "Logout": "Đăng xuất"
+  "Logout": "Đăng xuất",
+  "UsernameAlreadyExists": "Tên người dùng đã tồn tại",
+  "Copyright": "© 2024. All Rights Reserved."
 }

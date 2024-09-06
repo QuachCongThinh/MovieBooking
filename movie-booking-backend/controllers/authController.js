@@ -14,6 +14,8 @@ const register = async (req, res) => {
     if (existingUser) {
       return res.status(400).json({ error: "Username already exists" });
     }
+    const hashedPassword = await bcrypt.hash(password, 10);
+
     const user = new User({ username, email, password });
     await user.save();
     res.status(201).json({ message: "User registered successfully" });
@@ -49,4 +51,19 @@ const login = async (req, res) => {
   }
 };
 
-module.exports = { register, login };
+const checkUsernameExists = async (req, res) => {
+  try {
+    const { username } = req.body;
+    const user = await User.findOne({ username });
+
+    if (user) {
+      return res.status(200).json({ exists: true });
+    } else {
+      return res.status(200).json({ exists: false });
+    }
+  } catch (err) {
+    return res.status(500).json({ message: "Server error" });
+  }
+};
+
+module.exports = { register, login, checkUsernameExists };

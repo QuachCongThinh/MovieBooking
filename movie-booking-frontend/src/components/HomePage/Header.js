@@ -42,7 +42,7 @@ const Header = () => {
   };
 
   return (
-    <div id="container">
+    <div>
       <header>
         <div className="header">
           <div className="content">

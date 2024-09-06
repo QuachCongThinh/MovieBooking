@@ -19,4 +19,14 @@ const logout = () => {
   localStorage.removeItem("user");
 };
 
-export { register, login, logout };
+const checkUsernameExists = async (username) => {
+  try {
+    const response = await axios.post(`${API_URL}/checkUsername`, { username });
+    return response.data.exists;
+  } catch (error) {
+    console.error("Error checking username:", error);
+    return false;
+  }
+};
+
+export { register, login, logout, checkUsernameExists };

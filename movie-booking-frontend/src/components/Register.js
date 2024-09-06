@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { register } from "../services/auth";
+import { register, checkUsernameExists } from "../services/auth";
 import { useNavigate } from "react-router-dom";
 import "../styles/register.scss";
 import { useTranslation } from "react-i18next";
@@ -15,25 +15,36 @@ const Register = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
 
-  const validateForm = () => {
+
+  const validateForm = async () => {
     const newErrors = {};
-    if (!username) newErrors.username = t("UsernameNotEmpty");
+    if (!username) {
+      newErrors.username = t("UsernameNotEmpty");
+    }
+  
     if (!email) newErrors.email = t("EmailNotEmpty");
     if (!password) {
       newErrors.password = t("PasswordNotEmpty");
     } else if (password.length < 8) {
       newErrors.password = t("PasswordMinLength");
     }
+
+    const usernameExists = await checkUsernameExists(username);
+    if (usernameExists) {
+      newErrors.username = t("UsernameAlreadyExists");
+    }
     return newErrors;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const validationErrors = validateForm();
+    const validationErrors = await validateForm();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       return;
     }
+
+
     try {
       await register({ username, email, password });
       toast.success(t("RegisterSuccessfully"), {

@@ -7,7 +7,7 @@ import Dashboard from "./pages/Dashboard";
 // import MovieDetail from "./pages/MovieDetail";
 import "./styles/app.scss";
 import { ToastContainer } from "react-toastify";
-
+import "@fortawesome/fontawesome-free/css/all.css";
 function App() {
   return (
     <Router>

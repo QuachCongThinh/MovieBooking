@@ -12,22 +12,25 @@
       height: 100px;
       max-width: 1500px;
       .logo {
+        flex: 1;
         img {
           margin-top: 10px;
           width: 120px;
         }
       }
       .navbar {
+        flex: 2;
         ul {
           list-style: none;
           padding: 0;
           margin: 0;
           display: flex;
-
+          justify-content: center;
           li {
             position: relative;
-            margin-right: 80px;
+            margin-right: 40px;
             transition: 0.5s ease-in-out;
+            z-index: 100;
             a {
               text-decoration: none;
               color: #fff;
@@ -41,22 +44,25 @@
             ul {
               display: none;
               position: absolute;
-              left: -45px;
+              left: -95px;
               text-align: center;
-              width: 200px;
+              width: 300px;
               margin-top: 40px;
               border-radius: 7px;
               border: 1px solid #eeeeee;
               list-style: none;
               transition: 0.3s ease-in-out;
               animation: topDown 0.3s ease-in-out;
+              z-index: 100;
               li {
+                overflow: auto;
                 transition: 0.2s ease-in-out;
                 margin: 0;
                 a {
                   display: block;
                   padding: 10px;
                   color: #333;
+                  border-radius: 0 0 7px 7px;
                   transition: 0.2s ease-in-out;
                   &:hover {
                     background-color: rgb(245, 154, 94);
@@ -80,6 +86,8 @@
       .info {
         display: flex;
         align-items: center;
+        flex: 1;
+        justify-content: flex-end;
         .search {
           input {
             padding: 12px 15px;
@@ -103,9 +111,13 @@
             cursor: pointer;
             display: flex;
             align-items: center;
-
+            width: 150px;
             span {
               margin-right: 10px;
+              max-width: 450px;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
             }
 
             .dropdown-menu {
@@ -119,13 +131,13 @@
               flex-direction: column;
               margin-top: 20px;
               button {
-                border-radius: 7px;
+                border-radius: 5px;
                 border: 1px solid #eeeeee;
                 color: rgb(8, 19, 46);
                 font-family: monospace;
                 font-size: 15px;
                 cursor: pointer;
-                padding: 0px 40px;
+                padding: 10px 30px;
                 transition: 0.2s ease-in-out;
 
                 &:hover {
@@ -134,6 +146,100 @@
                 }
               }
             }
+          }
+        }
+      }
+    }
+  }
+  .footer {
+    .border-bottom {
+      .footer-container {
+        padding: 3rem 0px;
+        max-width: 100%;
+        background-color: #ffffff;
+        // background-color: #e0e0e0;
+        border-top: 1px solid #eee;
+        height: 280px;
+        .footer-top {
+          max-width: 100%;
+          width: 1500px;
+          margin: 0 auto;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          .input {
+            margin: 0;
+            padding-bottom: 0;
+            position: relative;
+            img {
+              max-width: 100%;
+              width: 200px;
+            }
+            input {
+              padding: 15px 15px;
+              border-radius: 5px;
+              font-size: 18px;
+              font-family: monospace;
+              background-color: #e6e6e6;
+              border: none;
+              outline: none;
+              width: 280px;
+            }
+            button {
+              position: absolute;
+              border: none;
+              background: none;
+              font-size: 15px;
+              top: 17px;
+              right: 5px;
+              line-height: 0;
+              cursor: pointer;
+              .icon-keyboard_backspace {
+                font-style: normal;
+                font-weight: normal;
+                font-variant: normal;
+                text-transform: none;
+                line-height: 1;
+                &::before {
+                  font-family: "Font Awesome 5 Free";
+                  content: "\f054";
+                  font-weight: 700;
+                  margin-right: 8px;
+                }
+              }
+            }
+          }
+          .thumb {
+            img {
+              max-width: 100%;
+              width: 200px;
+              margin-right: 140px;
+            }
+          }
+          .social-media {
+            display: flex;
+            font-size: 40px;
+            .icon {
+              transition: 0.3s ease-in-out;
+              &:hover {
+                color: rgb(247, 84, 8);
+              }
+            }
+            .youtube {
+              margin: 0px 30px;
+            }
+          }
+        }
+        .footer-bottom {
+          border-top: 1px solid #c9c9c9;
+          max-width: 100%;
+          margin: 0 auto;
+          span {
+            font-family: monospace;
+            font-size: 18px;
+            text-align: center;
+            display: block;
+            margin-top: 50px;
           }
         }
       }
