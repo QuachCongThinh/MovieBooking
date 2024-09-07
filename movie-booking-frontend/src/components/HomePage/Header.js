@@ -24,10 +24,24 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
-    const storedUserName = localStorage.getItem("username");
+    const storedUserName = sessionStorage.getItem("username");
     if (storedUserName) {
       setUserName(storedUserName);
+    } else {
+      const localStoredUserName = localStorage.getItem("username");
+      if (localStoredUserName) {
+        sessionStorage.setItem("username", localStoredUserName);
+        setUserName(localStoredUserName);
+      }
     }
+
+    const handleBeforeUnload = () => {
+      sessionStorage.removeItem("username");
+    };
+    window.addEventListener("beforeunload", handleBeforeUnload);
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
   }, []);
 
   const handleLogout = () => {
@@ -45,7 +59,7 @@ const Header = () => {
     <div>
       <header>
         <div className="header">
-          <div className="content">
+          <div className="container">
             <div className="logo">
               <img src={logo} alt="Logo Movie" />
             </div>
@@ -73,7 +87,7 @@ const Header = () => {
               </div>
               <div className="user-info">
                 <div className="user-select" onClick={toggleDropdown}>
-                  <span>{userName ? `Hello, ${userName}` : "Hello"}</span>
+                  <span>{userName ? `Hello, ${userName}` : "Hello, "}</span>
                   {isDropdownOpen && (
                     <div className="dropdown-menu" ref={dropdownRef}>
                       {userName ? (

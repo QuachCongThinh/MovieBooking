@@ -3,7 +3,7 @@
   "Register": "Đăng ký",
   "RegisterFailed": "Đăng ký thất bại",
   "RegisterSuccessfully": "Đăng ký thành công",
-  "LoginFailed": "Đăng nhập không thành công",
+  "LoginFailed": "Tên đăng nhập hoặc mật khẩu không đúng. Vui lòng kiểm tra lại",
   "LoginSuccessfully": "Đăng nhập thành công",
   "UserName": "Tên đăng nhập",
   "Email":"Email",

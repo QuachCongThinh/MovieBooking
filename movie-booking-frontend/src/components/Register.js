@@ -69,7 +69,7 @@ const Register = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container-register">
       <h1 id="register">{t("Register")}</h1>
       <div className="image"></div>
       <form className="register" onSubmit={handleSubmit}>

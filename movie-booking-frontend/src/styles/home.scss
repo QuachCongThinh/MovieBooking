@@ -1,16 +1,15 @@
 #container {
+  //////////////////////header
   .header {
     position: relative;
     max-width: 100%;
     height: 100px;
     background-color: rgb(8, 19, 46);
-    .content {
+    .container {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin: 0 auto;
       height: 100px;
-      max-width: 1500px;
       .logo {
         flex: 1;
         img {
@@ -53,6 +52,7 @@
               list-style: none;
               transition: 0.3s ease-in-out;
               animation: topDown 0.3s ease-in-out;
+              background-color: #f9f9f9;
               z-index: 100;
               li {
                 overflow: auto;
@@ -139,7 +139,8 @@
                 cursor: pointer;
                 padding: 10px 30px;
                 transition: 0.2s ease-in-out;
-
+                position: relative;
+                z-index: 10;
                 &:hover {
                   background-color: rgb(245, 154, 94);
                   color: #fff;
@@ -151,13 +152,128 @@
       }
     }
   }
+  ///////////////////Slider
+  .slider {
+    cursor: pointer;
+    position: relative;
+    .slick-slider {
+      position: relative;
+      img {
+        max-width: 100%;
+        width: 100%;
+        height: 700px;
+        object-fit: cover;
+        background-position: center;
+        border-radius: 10px;
+      }
+      .slick-slide {
+        padding: 10px;
+      }
+      .slick-list {
+        overflow: hidden;
+      }
+      .slick-track {
+        display: flex;
+        align-items: center;
+      }
+    }
+    .slick-dots {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+
+      li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 12px;
+        height: 12px;
+        margin: 0 5px;
+        button {
+          font-size: 0;
+          background-color: #ccc;
+          border-radius: 50%;
+          width: 12px;
+          height: 12px;
+          border: none;
+          outline: none;
+          &:before {
+            display: none;
+          }
+        }
+        &.slick-active button {
+          background-color: rgb(247, 84, 8);
+          border: none;
+          outline: none;
+        }
+      }
+    }
+    .slick-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      color: #fff;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out, left 0.3s ease-in-out,
+        right 0.3s ease-in-out;
+      &::before {
+        font-family: "FontAwesome";
+        font-size: 24px;
+        content: "\f104";
+      }
+
+      &.slick-prev {
+        background-color: rgba(236, 236, 236, 0.781);
+        font-size: 0;
+        left: 0px;
+      }
+      &.slick-next {
+        background-color: rgba(236, 236, 236, 0.781);
+        font-size: 0;
+        right: 0px;
+        &::before {
+          content: "\f105";
+        }
+      }
+
+      &:hover {
+        background-color: rgb(247, 84, 8);
+      }
+    }
+    &:hover .slick-arrow {
+      opacity: 1;
+    }
+
+    &:hover .slick-prev {
+      left: 80px;
+      transition: left 0.3s ease-in-out;
+    }
+
+    &:hover .slick-next {
+      right: 80px;
+      transition: right 0.3s ease-in-out;
+    }
+  }
+
+  ///////////////////Footer
   .footer {
+    padding-top: 80px;
     .border-bottom {
       .footer-container {
         padding: 3rem 0px;
         max-width: 100%;
         background-color: #ffffff;
-        // background-color: #e0e0e0;
         border-top: 1px solid #eee;
         height: 280px;
         .footer-top {

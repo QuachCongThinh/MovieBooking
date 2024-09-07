@@ -16,7 +16,11 @@ const Login = () => {
   const validateForm = () => {
     const newErrors = {};
     if (!username) newErrors.username = t("UsernameNotEmpty");
-    if (!password) newErrors.password = t("PasswordNotEmpty");
+    if (!password) {
+      newErrors.password = t("PasswordNotEmpty");
+    } else if (password.length < 8) {
+      newErrors.password = t("PasswordMinLength");
+    }
     return newErrors;
   };
   const handleSubmit = async (e) => {
@@ -49,7 +53,7 @@ const Login = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container-login">
       <h1 id="login">{t("Login")}</h1>
       <div className="image"></div>
       <form className="login" onSubmit={handleSubmit}>

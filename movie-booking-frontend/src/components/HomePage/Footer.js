@@ -17,7 +17,7 @@ const Footer = () => {
             <div className="input">
               <input type="email" placeholder="Enter your email"></input>
               <button>
-                <span class="icon-keyboard_backspace"></span>
+                <span className="icon-keyboard_backspace"></span>
               </button>
             </div>
             <div className="thumb">
