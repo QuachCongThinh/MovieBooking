@@ -16,5 +16,11 @@
   "BookTicket": "Đặt vé",
   "Logout": "Đăng xuất",
   "UsernameAlreadyExists": "Tên người dùng đã tồn tại",
-  "Copyright": "© 2024. All Rights Reserved."
+  "Copyright": "© 2024. All Rights Reserved.",
+  "Search": "Tìm kiếm...",
+  "BuyTicket": "Mua vé",
+  "Movie": "Phim",
+  "NowShowing": "Phim đang chiếu",
+  "ComingSoon": "Phim sắp chiếu",
+  "ShowMore": "Xem thêm"
 }

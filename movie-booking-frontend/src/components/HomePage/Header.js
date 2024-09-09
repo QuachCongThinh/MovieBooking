@@ -35,18 +35,22 @@ const Header = () => {
       }
     }
 
-    const handleBeforeUnload = () => {
+    const handleBeforeUnload = (event) => {
+      event.preventDefault();
       sessionStorage.removeItem("username");
+      localStorage.removeItem("username");
+      localStorage.removeItem("token");
     };
+
     window.addEventListener("beforeunload", handleBeforeUnload);
     return () => {
       window.removeEventListener("beforeunload", handleBeforeUnload);
     };
   }, []);
-
   const handleLogout = () => {
     localStorage.removeItem("username");
     localStorage.removeItem("token");
+    sessionStorage.removeItem("username");
     setUserName("");
     navigate("/login");
   };
@@ -83,7 +87,7 @@ const Header = () => {
             </div>
             <div className="info">
               <div className="search">
-                <input type="text" placeholder="Search..." />
+                <input type="text" placeholder={t("Search")} />
               </div>
               <div className="user-info">
                 <div className="user-select" onClick={toggleDropdown}>
